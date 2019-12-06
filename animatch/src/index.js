@@ -35,10 +35,14 @@ const allReducers = combineReducers({
   user: userReducer
 });
 
-const store = createStore(allReducers, {
-  product: [{ name: "iphone" }],
-  user: "masashi"
-}); //store設置 reducerは必須
+const store = createStore(
+  allReducers,
+  {
+    season: "winter", //createStoreの第二引数でデフォルトの値を設置できる
+    user: "tamago"
+  },
+  window.devToolsExtension && window.devToolsExtension()
+); //store設置 reducerは必須
 
 const changeSeason = {
   type: "CHANGE_SEASON", //typeはうっかり同じ名前をつけないよう、別ファイルでjsonやconstで管理するのがよさそう。
