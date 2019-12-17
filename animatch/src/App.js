@@ -6,9 +6,10 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        {routes.map((config, i) => (
-          <Route key={i} {...config} />
-        ))}
+        {routes.map((config, i) =>
+          // <Route key={i} {...config} />
+          console.log(config)
+        )}
       </Switch>
     </BrowserRouter>
   );
